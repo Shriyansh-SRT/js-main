@@ -26,9 +26,10 @@ const hundreds = 100000;
 // console.log(Math.min(2,3,7,1));
 // console.log(Math.max(11,21,10,78));
 
-//console.log(Math.random());
+console.log(Math.random());
 
-//console.log(Math.floor(Math.random() * 6) + 1);
+console.log(Math.floor(Math.random() * 10) + 1);
+console.log(Math.floor(Math.random() * 6) + 1);
 
 const min = 10;
 const max = 20;
