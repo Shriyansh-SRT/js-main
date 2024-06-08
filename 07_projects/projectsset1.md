@@ -94,3 +94,45 @@ setInterval(function (){
   clock.innerHTML = date.toLocaleTimeString();
 }, 1000)
 ```
+
+## project 4
+
+```javascript
+
+let randomNum = Math.floor(Math.random() * 100) + 1;
+const prevGuess = document.querySelector(".guesses");
+const remainingGuess = document.querySelector(".lastResult");
+let count = parseInt(remainingGuess.textContent);
+const lowOrHigh = document.querySelector(".lowOrHi");
+
+
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+
+  e.preventDefault();
+  
+  const inputVal = parseInt(document.querySelector("#guessField").value);
+  if(inputVal === '' || inputVal < 1 || inputVal>100 || isNaN(inputVal)){
+    prevGuess.innerHTML = `Invalid input ${inputVal}`;
+  }else{
+    if(count === 0){
+      prevGuess.innerHTML = `Limit reached.`;
+    }else{
+      if(inputVal > randomNum){
+        prevGuess.innerHTML += `${inputVal}, `;
+        lowOrHigh.innerHTML = `Choose lower number`;
+        remainingGuess.innerHTML = --count;
+  
+      }else if(inputVal < randomNum){
+        prevGuess.innerHTML += `${inputVal}, `;
+        lowOrHigh.innerHTML = `Choose higher number`;
+        remainingGuess.innerHTML = --count;
+      }else{
+        lowOrHigh.innerHTML = `Guessed correct!: ${randomNum} == ${inputVal}`;
+      }
+    }
+  }
+})
+```
