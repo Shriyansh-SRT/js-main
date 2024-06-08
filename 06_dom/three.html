@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+
+<script>
+    const myDiv = document.createElement('div');
+    console.log(myDiv);
+    myDiv.className ="main";
+    myDiv.id = "myId";
+    myDiv.setAttribute('title','myTitle');
+    myDiv.style.backgroundColor = "red";
+    myDiv.style.padding = "12px";
+    // myDiv.innerHTML = "Shriyansh";
+    const myText = document.createTextNode("Shriyansh");
+    myDiv.appendChild(myText);
+
+    document.body.appendChild(myDiv);
+
+</script>
+
+</html>
