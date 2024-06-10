@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Shriyanshh</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+const start = document.querySelector("#start");
+const stop = document.querySelector("#stop");
+let myInterval;
+
+const myDate = function(str){
+        console.log(str, Date.now());
+    }
+    
+start.addEventListener('click', function(e){
+     myInterval = setInterval(myDate, 1000, "Hii");
+    
+})
+
+stop.addEventListener('click', function(e){
+    clearInterval(myInterval);
+    console.log("Stopped");
+})
+    
+</script>
+</html>
