@@ -234,3 +234,32 @@ function newGame() {
 }
 
 ```
+
+## project solution 6
+
+```javascript 
+// generate random color
+
+let randomColor = function () {
+  let hash = '#';
+  let code = '0123456789ABCDEF';
+  for (let i = 0; i < 6; i++) {
+    hash += code[Math.floor(Math.random() * 16)];
+  }
+  document.querySelector('body').style.backgroundColor = hash;
+};
+
+let colorChangerId;
+
+const start = document.querySelector('#start');
+const stop = document.querySelector('#stop');
+
+start.addEventListener('click', function (e) {
+  colorChangerId = setInterval(randomColor, 1000);
+});
+
+stop.addEventListener('click', function (e) {
+  clearInterval(colorChangerId);
+});
+
+```
