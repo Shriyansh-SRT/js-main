@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid gray;
+        }
+
+        .card{
+            height: 200px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+
+        }
+
+        .card img{
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+
+        #followers{
+            display: block;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        #fetchData{
+            text-align: center;
+            padding: 10px;
+            background-color: gray;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+
+
+    <!-- <div class="container">
+        <button id="fetchData">Fetch Data</button>
+    </div>
+     -->
+
+    <script>
+
+        // const button = document.querySelector("#fetchData");
+        // const container = document.querySelector(".container");
+
+        // const getData = function(){
+        //     const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+        //     const xhr = new XMLHttpRequest();
+        //     xhr.open('GET', requestURL);
+        //     xhr.onreadystatechange = function(){
+        //         console.log(xhr.readyState);
+        //         if(xhr.readyState === 4){
+        //             const data = JSON.parse(this.responseText);
+        //             // data.avatar_url;
+        //             // data.followers;
+        //             container.innerHTML = 
+        //             `<div class="card">
+        //                 <img src="${data.avatar_url}" />
+        //             <div>
+        //             <div id="followers">${data.followers}</div>
+        //             </div>`
+                    
+        //         }
+        //     }
+        //     xhr.send();
+        // }
+        // button.addEventListener('click', getData)
+
+
+        const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestURL);
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText);
+                console.log(data.followers);
+            }
+        }
+        xhr.send();
+
+    </script>
+</body>
+</html>
